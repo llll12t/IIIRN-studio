@@ -9,14 +9,3 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// ตรวจสอบสถานะผู้ใช้งาน
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    // ผู้ใช้งานล็อกอินแล้ว
-    console.log('User is logged in:', user);
-  } else {
-    // ไม่มีผู้ใช้งานล็อคอิน
-    console.log('User is not logged in');
-    // Redirect or handle as needed
-  }
-});
