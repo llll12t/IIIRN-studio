@@ -8,7 +8,24 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
+  <nav class="bg-gray-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo or site name can be added here -->
+      <a href="#" class="text-white text-lg font-bold">Your Blog</a>
 
+      <!-- Navigation Menu -->
+      <ul class="flex space-x-4">
+        <li><a href="/" class="text-white">Home</a></li>
+        <li><a href="login.html" class="text-white">login</a></li>
+        <li><a href="register.html" class="text-white">register</a></li>
+        <span id="displayName"></span> 
+        <li><button id="logoutBtn">Logout</button></li> <!-- Logout button -->
+      </ul>
+
+      <!-- Theme Toggle Button -->
+      <button id="themeToggle" class="text-white">Toggle Theme</button>
+    </div>
+  </nav>
   <div class="container mx-auto p-4">
     <h2 class="text-3xl font-bold mb-4">Login</h2>
     <form id="loginForm" class="max-w-sm">
