@@ -22,35 +22,46 @@
       <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 px-4 mt-4 rounded-md focus:outline-none hover:bg-blue-700">Login</button>
     </form>
   </div>
+ <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
+    import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <!-- Include your JavaScript for theme toggle functionality -->
-  <script src="firebase-config.js"></script>
+    // Include your Firebase config
+    const firebaseConfig = {
+        apiKey: "AIzaSyAy9Nvu3357kNsOd9EMB-vrw9fqSqMuAQs",
+        authDomain: "iiirnstudio-6627b.firebaseapp.com",
+        projectId: "iiirnstudio-6627b",
+        storageBucket: "iiirnstudio-6627b.appspot.com",
+        messagingSenderId: "934458269500",
+        appId: "1:934458269500:web:544e288fbc58e958834839"
+    };
 
-  <script>
-    // Login form JavaScript
-    const loginForm = document.getElementById('loginForm');
+    // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-    loginForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
+  // Login form JavaScript
+  const loginForm = document.getElementById('loginForm');
 
-      // Retrieve form data
-      const formData = new FormData(loginForm);
-      const email = formData.get('email');
-      const password = formData.get('password');
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-      try {
-        // Sign in user with email and password
-        await signInWithEmailAndPassword(auth, email, password);
+    // Retrieve form data
+    const formData = new FormData(loginForm);
+    const email = formData.get('email');
+    const password = formData.get('password');
 
-        // User login successful, redirect to index.html
-        window.location.href = 'index.html';
-      } catch (error) {
-        // Handle login error
-        console.error('Login error:', error.message);
-      }
-    });
-  </script>
+    try {
+      // Sign in user with email and password
+      await signInWithEmailAndPassword(auth, email, password);
+
+      // User login successful, redirect to index.html
+      window.location.href = 'index.html';
+    } catch (error) {
+      // Handle login error
+      console.error('Login error:', error.message);
+    }
+  });
+</script>
 </body>
 </html>
