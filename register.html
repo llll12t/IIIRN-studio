@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สมัครสมาชิก</title>
+  <!-- Include the Tailwind CSS CDN or link the stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Additional styles can be added here */
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Registration Form -->
+  <div class="container mx-auto mt-8 p-8 bg-white shadow-md rounded-md max-w-md">
+    <h2 class="text-2xl font-bold mb-6">สมัครสมาชิก</h2>
+
+    <!-- Form -->
+    <form id="registrationForm">
+      <div class="mb-4">
+        <label for="username" class="block text-sm font-medium text-gray-600">ชื่อผู้ใช้</label>
+        <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-600">อีเมล</label>
+        <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+
+      <div class="mb-6">
+        <label for="password" class="block text-sm font-medium text-gray-600">รหัสผ่าน</label>
+        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+
+      <button type="submit" class="bg-blue-500 text-white p-2 rounded-md">สมัครสมาชิก</button>
+    </form>
+  </div>
+
+  <!-- Include the Firebase SDK -->
+<!-- Include the Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src=firebase-config></script>
+  <!-- Include your JavaScript for form submission and validation -->
+  <script>
+    const registrationForm = document.getElementById('registrationForm');
+
+    registrationForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      // Retrieve form data
+      const formData = new FormData(registrationForm);
+      const username = formData.get('username');
+      const email = formData.get('email');
+      const password = formData.get('password');
+
+      try {
+        // Create user with email and password
+        const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+        // Update user profile (optional)
+        await userCredential.user.updateProfile({
+          displayName: username
+        });
+
+        // User registration successful
+        console.log('User registered:', userCredential.user);
+      } catch (error) {
+        // Handle registration error
+        console.error('Registration error:', error.message);
+      }
+    });
+  </script>
+</body>
+</html>
