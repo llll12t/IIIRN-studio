@@ -11,7 +11,24 @@
   </style>
 </head>
 <body class="bg-gray-100">
+  <nav class="bg-gray-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo or site name can be added here -->
+      <a href="#" class="text-white text-lg font-bold">Your Blog</a>
 
+      <!-- Navigation Menu -->
+      <ul class="flex space-x-4">
+        <li><a href="/" class="text-white">Home</a></li>
+        <li><a href="login.html" class="text-white">login</a></li>
+        <li><a href="register.html" class="text-white">register</a></li>
+        <span id="displayName"></span> 
+        <li><button id="logoutBtn">Logout</button></li> <!-- Logout button -->
+      </ul>
+
+      <!-- Theme Toggle Button -->
+      <button id="themeToggle" class="text-white">Toggle Theme</button>
+    </div>
+  </nav>
   <!-- Registration Form -->
   <div class="container mx-auto mt-8 p-8 bg-white shadow-md rounded-md max-w-md">
     <h2 class="text-2xl font-bold mb-6">สมัครสมาชิก</h2>
