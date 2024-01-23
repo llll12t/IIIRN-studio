@@ -1,3 +1,6 @@
+// ในไฟล์ firebase-config.js
+import 'firebase/database';
+
 function saveData() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
