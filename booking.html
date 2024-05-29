@@ -3,131 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>UI Example</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .selected {
+            background-color: #ffebee; /* Light pink background */
+            color: #d32f2f; /* Red text */
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-
-    <!-- Header -->
-    <nav class="bg-white shadow-md">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-4">
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="text-lg font-semibold text-gray-700">ร้านค้า</a>
-                    <a href="#" class="text-lg font-semibold text-gray-700">ภาพรวมสินค้า</a>
-                    <a href="#" class="text-lg font-semibold text-gray-700">คลังสินค้า</a>
-                    <a href="#" class="text-lg font-semibold text-gray-700">แต้มสะสม</a>
-                    <a href="#" class="text-lg font-semibold text-gray-700">พนักงาน</a>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <input type="text" class="w-2/3 p-2 border rounded-md" value="asdasdasd54sada6sf..." readonly>
+            <div class="bg-pink-200 text-pink-600 text-center rounded-lg w-20 h-20 flex items-center justify-center">
+                <span class="text-3xl">10</span><br>
+                <span class="text-sm">points</span>
+            </div>
+        </div>
+        
+        <!-- Registration Button -->
+        <button class="w-full bg-gray-100 text-gray-700 py-2 rounded-md mb-6">ลงทะเบียน</button>
+        
+        <!-- Service Selection -->
+        <div class="mb-6">
+            <button class="w-full bg-pink-200 text-gray-700 py-2 rounded-md">เลือกบริการ</button>
+            <div class="mt-2 p-4 bg-white rounded-md shadow-md">จองคิว นวด แผนไทย</div>
+        </div>
+        
+        <!-- Employee Information -->
+        <div class="mb-6">
+            <div class="bg-pink-200 text-gray-700 py-2 rounded-md">พนักงาน</div>
+            <div class="mt-2 p-4 bg-white rounded-md shadow-md">นางสาว ทริปเปิ้ลเอ ทรงข้อ</div>
+        </div>
+        
+        <!-- Calendar -->
+        <div>
+            <div class="text-center font-semibold mb-4">
+                <select id="monthSelect" class="bg-white border border-gray-300 rounded-md px-2 py-1">
+                    <option value="0">มกราคม</option>
+                    <option value="1">กุมภาพันธ์</option>
+                    <option value="2">มีนาคม</option>
+                    <option value="3">เมษายน</option>
+                    <option value="4">พฤษภาคม</option>
+                    <option value="5">มิถุนายน</option>
+                    <option value="6">กรกฎาคม</option>
+                    <option value="7">สิงหาคม</option>
+                    <option value="8">กันยายน</option>
+                    <option value="9">ตุลาคม</option>
+                    <option value="10">พฤศจิกายน</option>
+                    <option value="11">ธันวาคม</option>
+                </select>
+                <select id="yearSelect" class="bg-white border border-gray-300 rounded-md px-2 py-1">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+            <div class="overflow-x-auto mb-4">
+                <div id="calendarDays" class="flex gap-2">
+                    <!-- Days will be populated by JavaScript -->
                 </div>
-                <button class="bg-brown-500 text-white px-4 py-2 rounded-md">เข้าสู่ระบบ</button>
             </div>
-        </div>
-    </nav>
-
-    <!-- Summary Cards -->
-    <div class="container mx-auto px-4 my-8">
-        <div class="grid grid-cols-4 gap-4">
-            <div class="bg-green-500 text-white p-8 rounded-lg shadow-md">
-                <p class="text-4xl font-bold">50</p>
-                <p>สินค้าทั้งหมด</p>
-            </div>
-            <div class="bg-gray-200 text-gray-700 p-8 rounded-lg shadow-md">
-                <p class="text-4xl font-bold">10</p>
-                <p>สินค้าใกล้หมด</p>
-            </div>
-            <div class="bg-gray-200 text-gray-700 p-8 rounded-lg shadow-md">
-                <p class="text-4xl font-bold">5</p>
-                <p>สินค้าขาดสต็อก</p>
-            </div>
-            <div class="bg-white text-gray-700 p-8 rounded-lg shadow-md">
-                <p class="text-4xl font-bold">1000</p>
-                <p>ออเดอร์</p>
-            </div>
-            <div class="bg-white text-gray-700 p-8 rounded-lg shadow-md">
-                <p class="text-4xl font-bold">920</p>
-                <p>ลูกค้า</p>
-            </div>
-            <div class="bg-white text-gray-700 p-8 rounded-lg shadow-md">
-                <p class="text-4xl font-bold">92000</p>
-                <p>ยอดขาย</p>
+            
+            <!-- Time Slots -->
+            <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                    <span>10:00 น.</span>
+                    <button class="bg-red-200 text-red-600 px-4 py-1 rounded-md">เต็ม</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-1 rounded-md">นัดหมาย</button>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>11:00 น.</span>
+                    <button class="bg-red-200 text-red-600 px-4 py-1 rounded-md">เต็ม</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-1 rounded-md">นัดหมาย</button>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>12:00 น.</span>
+                    <button class="bg-red-200 text-red-600 px-4 py-1 rounded-md">เต็ม</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-1 rounded-md">นัดหมาย</button>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>13:00 น.</span>
+                    <button class="bg-red-200 text-red-600 px-4 py-1 rounded-md">เต็ม</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-1 rounded-md">นัดหมาย</button>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>14:00 น.</span>
+                    <button class="bg-green-200 text-green-600 px-4 py-1 rounded-md">ว่าง</button>
+                    <button class="bg-gray-200 text-gray-700 px-4 py-1 rounded-md">นัดหมาย</button>
+                </div>
             </div>
         </div>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const monthSelect = document.getElementById('monthSelect');
+            const yearSelect = document.getElementById('yearSelect');
+            const calendarDays = document.getElementById('calendarDays');
+            
+            const today = new Date();
+            const currentMonth = today.getMonth();
+            const currentYear = today.getFullYear();
+            const thaiYear = currentYear + 543;
+            const daysOfWeek = ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'];
 
-    <!-- Data Table -->
-    <div class="container mx-auto px-4 my-8">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ภาพรวมสินค้า</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ราคาร้อน</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ราคาเย็น</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">จำนวนขาย(ร้อน)</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">จำนวนขาย(เย็น)</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ยอดรวม</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">สรุป</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
-                        <td class="px-6 py-4 whitespace-nowrap">35</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">85</td>
-                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
-                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
-                        <td class="px-6 py-4 whitespace-nowrap">35</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">85</td>
-                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
-                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
-                        <td class="px-6 py-4 whitespace-nowrap">35</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">85</td>
-                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
-                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
-                        <td class="px-6 py-4 whitespace-nowrap">35</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">85</td>
-                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
-                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
-                        <td class="px-6 py-4 whitespace-nowrap">35</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">85</td>
-                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
-                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
-                        <td class="px-6 py-4 whitespace-nowrap">35</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">40</td>
-                        <td class="px-6 py-4 whitespace-nowrap">85</td>
-                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
-                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+            // Set current month
+            monthSelect.value = currentMonth;
 
+            // Populate year dropdown
+            for (let year = thaiYear - 5; year <= thaiYear + 5; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            }
+
+            // Set current year
+            yearSelect.value = thaiYear;
+
+            // Populate days
+            function populateDays(month, year) {
+                calendarDays.innerHTML = '';
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const date = new Date(year, month, day);
+                    const dayElement = document.createElement('div');
+                    dayElement.classList.add('bg-white', 'p-2', 'text-center', 'rounded-md', 'cursor-pointer');
+                    dayElement.textContent = `${daysOfWeek[date.getDay()]} ${day}`;
+                    dayElement.addEventListener('click', () => {
+                        document.querySelectorAll('#calendarDays > div').forEach(el => el.classList.remove('selected'));
+                        dayElement.classList.add('selected');
+                    });
+                    calendarDays.appendChild(dayElement);
+                }
+            }
+
+            populateDays(currentMonth, currentYear);
+
+            // Add event listeners to update calendar when month or year changes
+            monthSelect.addEventListener('change', () => updateCalendar());
+            yearSelect.addEventListener('change', () => updateCalendar());
+
+            function updateCalendar() {
+                const selectedMonth = parseInt(monthSelect.value);
+                const selectedYear = parseInt(yearSelect.value) - 543;
+                populateDays(selectedMonth, selectedYear);
+            }
+        });
+    </script>
 </body>
 </html>
