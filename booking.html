@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-lg font-semibold text-gray-700">ร้านค้า</a>
+                    <a href="#" class="text-lg font-semibold text-gray-700">ภาพรวมสินค้า</a>
+                    <a href="#" class="text-lg font-semibold text-gray-700">คลังสินค้า</a>
+                    <a href="#" class="text-lg font-semibold text-gray-700">แต้มสะสม</a>
+                    <a href="#" class="text-lg font-semibold text-gray-700">พนักงาน</a>
+                </div>
+                <button class="bg-brown-500 text-white px-4 py-2 rounded-md">เข้าสู่ระบบ</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Summary Cards -->
+    <div class="container mx-auto px-4 my-8">
+        <div class="grid grid-cols-4 gap-4">
+            <div class="bg-green-500 text-white p-8 rounded-lg shadow-md">
+                <p class="text-4xl font-bold">50</p>
+                <p>สินค้าทั้งหมด</p>
+            </div>
+            <div class="bg-gray-200 text-gray-700 p-8 rounded-lg shadow-md">
+                <p class="text-4xl font-bold">10</p>
+                <p>สินค้าใกล้หมด</p>
+            </div>
+            <div class="bg-gray-200 text-gray-700 p-8 rounded-lg shadow-md">
+                <p class="text-4xl font-bold">5</p>
+                <p>สินค้าขาดสต็อก</p>
+            </div>
+            <div class="bg-white text-gray-700 p-8 rounded-lg shadow-md">
+                <p class="text-4xl font-bold">1000</p>
+                <p>ออเดอร์</p>
+            </div>
+            <div class="bg-white text-gray-700 p-8 rounded-lg shadow-md">
+                <p class="text-4xl font-bold">920</p>
+                <p>ลูกค้า</p>
+            </div>
+            <div class="bg-white text-gray-700 p-8 rounded-lg shadow-md">
+                <p class="text-4xl font-bold">92000</p>
+                <p>ยอดขาย</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Table -->
+    <div class="container mx-auto px-4 my-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ภาพรวมสินค้า</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ราคาร้อน</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ราคาเย็น</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">จำนวนขาย(ร้อน)</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">จำนวนขาย(เย็น)</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ยอดรวม</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">สรุป</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
+                        <td class="px-6 py-4 whitespace-nowrap">35</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">85</td>
+                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
+                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
+                        <td class="px-6 py-4 whitespace-nowrap">35</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">85</td>
+                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
+                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
+                        <td class="px-6 py-4 whitespace-nowrap">35</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">85</td>
+                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
+                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
+                        <td class="px-6 py-4 whitespace-nowrap">35</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">85</td>
+                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
+                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
+                        <td class="px-6 py-4 whitespace-nowrap">35</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">85</td>
+                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
+                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">ภาพรวมสินค้า</td>
+                        <td class="px-6 py-4 whitespace-nowrap">35</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">40</td>
+                        <td class="px-6 py-4 whitespace-nowrap">85</td>
+                        <td class="px-6 py-4 whitespace-nowrap">11500</td>
+                        <td class="px-6 py-4 whitespace-nowrap">ตามเป้า</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
